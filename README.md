@@ -31,11 +31,5 @@ Install dependancies that will create an environment for the app to run <code>pi
 
 
 ## Make and run migrations
-<code>
-python3.7 manage.py check
-python manage.py makemigrations gallery
-python3.7 manage.py sqlmigrate gallery 0001
-python3.7 manage.py migrate
-</code>
 
 
