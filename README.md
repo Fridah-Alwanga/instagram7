@@ -24,3 +24,9 @@ This is a clone of  Instagram where people share their  images  for other users 
 - Postgresql
 - Django 1.11
 </code></pre>
+
+
+## Install dependancies
+Install dependancies that will create an environment for the app to run pip install -r requirements.txt
+
+
