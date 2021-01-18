@@ -27,6 +27,6 @@ This is a clone of  Instagram where people share their  images  for other users 
 
 
 ## Install dependancies
-Install dependancies that will create an environment for the app to run pip install -r requirements.txt
+Install dependancies that will create an environment for the app to run <code>pip install -r requirements.txt</code>
 
 
