@@ -38,9 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'instag',
+    'rest_framework',
     'crispy_forms',
 ]
-]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -78,10 +79,12 @@ WSGI_APPLICATION = 'instagram.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'instag',
-        'USER': 'moringa',
-        'PASSWORD':'fridah'
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'instagram',
+        'USER': 'postgres',
+        'PASSWORD':'fridah',
+        'HOST':'localhost',
+        'PORT': '5432',
 
     }
 }
