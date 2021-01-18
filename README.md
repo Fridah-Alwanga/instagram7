@@ -13,3 +13,14 @@ This is a clone of  Instagram where people share their  images  for other users 
 4. Install all the requirements found in requirements file.
 5. On your terminal run <code>python3.7 manage.py runserver</code>
 6. Access the live site using the local host provided
+
+
+## Technologies used
+<pre><code>
+- Python3.6
+- HTML
+- Bootstrap 4
+- Heroku
+- Postgresql
+- Django 1.11
+</code></pre>
