@@ -13,28 +13,17 @@
                 <div class="card-title mt-4">
                 </div>
                 <div class="card-body mb-3 mr-3 ml-3">
-                    <form class="form-horizontal" name="LoginForm" action="/login/" method="post">
-                        {% csrf_token %}
-                        {% if next %}
-                            <input type="hidden" name="next" value="{{ next }}" />
-                        {% endif %}
-                        <div class="control-group">
-                        <label class="control-label" for="username">Username</label>
-                            <div class="controls">
-                                <input type="text" id="username" value="{{username}}" placeholder="Username">
+                    
+                        <form method="POST">
+                            {% csrf_token %}
+                            <fieldset class="form-group">
+                                <legend class="border-bottom mb-4">Log In</legend>
+                                {{ form|crispy }}
+                            </fieldset>
+                            <div class="form-group">
+                                <button class="btn btn-outline-info" type="submit">Log In</button>
+                               
                             </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label" for="password">Password</label>
-                                <div class="controls">
-                                    <input type="password" name="password" id="password" placeholder="Password">
-                                </div>
-                        </div>
-                        <div class="control-group">
-                            <div class="controls">
-                                <button type="submit" class="btn">Login</button>
-                            </div>
-                        </div>
                         </form>
                 </div>
                 <a href="" class="D-block mx-auto mb-3">Forgot password? </a>

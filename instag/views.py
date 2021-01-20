@@ -47,7 +47,7 @@ def signup(request):
     return render(request, 'registration/signup.html', {'form': form})
 
 
-# @login_required(login_url='login')
+@login_required(login_url='login')
 def index(request):
     images = Post.objects.all()
     users = User.objects.exclude(id=request.user.id)
