@@ -29,7 +29,6 @@ def my_login(request):
                 login(request, user)
                 return redirect('index')
     return render(request, 'registration/login.html',{'username': username})
-    # return render(request, 'add_company.html', {'form': form})
 
 
 def signup(request):
@@ -79,7 +78,6 @@ def profile(request, username):
             user_form.save()
             prof_form.save()
             return redirect('profile')
-            # return HttpResponseRedirect(request.path_info)
     else:
         user_form = UpdateUserForm(instance=request.user)
         prof_form = UpdateUserProfileForm(instance=request.user.profile)
@@ -119,7 +117,6 @@ def user_profile(request, username):
 @login_required(login_url='login')
 def post_comment(request, id):
     image = get_object_or_404(Post, pk=id)
-    # print("My images................",image)
     is_liked = False
     if image.likes.filter(id=request.user.id).exists():
         is_liked = True
@@ -161,7 +158,6 @@ class PostLikeAPIToggle(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request, id=None, format=None):
-        # id = self.kwargs.get('id')
         obj = get_object_or_404(Post, pk=id)
         url_ = obj.get_absolute_url()
         user = self.request.user
