@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'instag',
     'rest_framework',
     'crispy_forms',
+    'bootstrap3',
+    # 'bootstrap4'
 ]
 
 
@@ -137,6 +139,6 @@ STATICFILES_DIRS = (
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-LOGIN_REDIRECT_URL = 'index'
+LOGIN_REDIRECT_URL = 'instagram/index.html'
 
 LOGOUT_REDIRECT_URL = 'login'

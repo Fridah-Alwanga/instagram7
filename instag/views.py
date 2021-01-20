@@ -10,6 +10,26 @@ from django.views.generic import RedirectView
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import authentication, permissions
+import datetime
+from django.http import *
+from django.shortcuts import render
+from django.template import RequestContext
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login
+
+def my_login(request):
+    username = password = ''
+    if request.POST:
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                return HttpResponseRedirect('index')
+    return render(request, 'registration/login.html',{'username': username})
+    # return render(request, 'add_company.html', {'form': form})
 
 
 def signup(request):
@@ -27,7 +47,7 @@ def signup(request):
     return render(request, 'registration/signup.html', {'form': form})
 
 
-@login_required(login_url='login')
+# @login_required(login_url='login')
 def index(request):
     images = Post.objects.all()
     users = User.objects.exclude(id=request.user.id)
@@ -58,7 +78,8 @@ def profile(request, username):
         if user_form.is_valid() and prof_form.is_valid():
             user_form.save()
             prof_form.save()
-            return HttpResponseRedirect(request.path_info)
+            return redirect('profile')
+            # return HttpResponseRedirect(request.path_info)
     else:
         user_form = UpdateUserForm(instance=request.user)
         prof_form = UpdateUserProfileForm(instance=request.user.profile)
@@ -98,6 +119,7 @@ def user_profile(request, username):
 @login_required(login_url='login')
 def post_comment(request, id):
     image = get_object_or_404(Post, pk=id)
+    # print("My images................",image)
     is_liked = False
     if image.likes.filter(id=request.user.id).exists():
         is_liked = True
