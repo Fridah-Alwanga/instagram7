@@ -17,12 +17,12 @@ This is a clone of  Instagram where people share their  images  for other users 
 
 ## Technologies used
 <pre><code>
-- Python3.6
+- Python3.7
 - HTML
 - Bootstrap 4
 - Heroku
 - Postgresql
-- Django 1.11.17
+- Django 1.11.
 </code></pre>
 
 
