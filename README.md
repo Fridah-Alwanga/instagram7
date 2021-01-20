@@ -22,7 +22,7 @@ This is a clone of  Instagram where people share their  images  for other users 
 - Bootstrap 4
 - Heroku
 - Postgresql
-- Django 1.11.
+- Django 1.11
 </code></pre>
 
 
