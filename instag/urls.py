@@ -4,9 +4,9 @@ from . import views
 
 urlpatterns = [
     path('signup/', views.signup, name='signup'),
-    path('login/',views.my_login, name='login'),
+    path('',views.my_login, name='login'),
     path('account/', include('django.contrib.auth.urls')),
-    path('', views.index, name='index'),
+    path('index', views.index, name='index'),
     path('profile/<username>/', views.profile, name='profile'),
     path('user_profile/<username>/', views.user_profile, name='user_profile'),
     path('post/<id>', views.post_comment, name='comment'),

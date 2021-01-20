@@ -27,7 +27,7 @@ def my_login(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                return HttpResponseRedirect('index')
+                return redirect('index')
     return render(request, 'registration/login.html',{'username': username})
     # return render(request, 'add_company.html', {'form': form})
 
